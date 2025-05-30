@@ -116,6 +116,7 @@ Variabel-variabel pada Books Dataset adalah sebagai berikut:
     ![image](https://github.com/user-attachments/assets/b86a9e04-4349-4693-bab9-46b463387cb9)<br>
     ![image](https://github.com/user-attachments/assets/a5981552-c546-4811-acf5-41b468934728)<br>
 ## Evaluation
-- Dari hasil percobaan dengan judul buku yang sama, yaitu menggunakan cosine similarity dan euclidean distance, keduanya memberikan rekomendasi buku yang sama.
-- Dengan metode cosine similarity, nilai tertinggi yaitu 0.69
-- Dengan metode euclidean distance, jarak terdekat yaitu 0.77 
+- Dari hasil percobaan dengan judul buku yang sama, yaitu menggunakan cosine similarity dan euclidean distance, keduanya memberikan rekomendasi judul buku yang konsisten.
+- Dengan metode cosine similarity, nilai tertinggi yaitu 0.69 untuk buku berjudul 'Two Alone'. Lalu, diikuti 'Three Complete Novels' dengan cs 0.54
+- Dengan metode euclidean distance, jarak terdekat yaitu 0.77 untuk buku berjudul 'Two Alone'. Lalu, diikuti 'Three Complete Novels' dengan distance 0.95
+- Dari ketiga hal tersebut, bisa dikatakan bahwa sistem rekomendasi menggunakan cosine similarity dan euclidean distance sudah cukup baik untuk melakukan tugasnya. Namun, masih bisa dikembangkan lagi untuk bisa menaikkan nilai cosine similarity dan menurunkan nilai euclidean distance.
