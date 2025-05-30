@@ -81,6 +81,13 @@ Variabel-variabel pada Books Dataset adalah sebagai berikut:
 ## Modeling
 
 - Ekstraksi Fitur dengan TF-IDF
+  - Definisi: teknik dalam Natural Language Processing (NLP) yang digunakan untuk mengubah data teks menjadi angka-angka yang bisa diproses oleh algoritma machine learning atau sistem rekomendasi. Dalam konteks content-based filtering, TF-IDF berperan untuk mengekstrak fitur penting dari konten teks yang akan dibandingkan antar item (buku).
+  - Rumus:<br>
+    ![image](https://github.com/user-attachments/assets/2066c3b4-b6ea-4cbf-abfc-3b2889b1c9be)<br>
+  - Flow:
+  - Hasil Ekstraksi:<br>
+  ![image](https://github.com/user-attachments/assets/1b4a7a04-a837-43bd-afc7-92a415ccba06)<br>
+  Matriks dengan dimensi 6810 (baris) x 10317 (kolom) 
 - Sistem Rekomendasi dengan Cosine Similarity.
   - Definisi: Ukuran kemiripan antara dua vektor berdasarkan sudut (cosine) di antara keduanya, bukan jaraknya. Cosine similarity digunakan untuk mengukur seberapa mirip arah dua vektor dalam ruang multidimensi, tanpa memperhatikan panjangnya (magnitudo). Dalam konteks content-based filtering, semakin tinggi nilai cosine similarity-nya maka semakin tinggi kemiripannya. Sebaliknya, semakin rendah nilai cosine similarity-nya maka semakin rendah kemiripannya.
   - Rumus:<br>
