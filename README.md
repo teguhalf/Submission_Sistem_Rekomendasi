@@ -85,8 +85,15 @@ Variabel-variabel pada Books Dataset adalah sebagai berikut:
   - Definisi: Ukuran kemiripan antara dua vektor berdasarkan sudut (cosine) di antara keduanya, bukan jaraknya. Cosine similarity digunakan untuk mengukur seberapa mirip arah dua vektor dalam ruang multidimensi, tanpa memperhatikan panjangnya (magnitudo). Dalam konteks content-based filtering, semakin tinggi nilai cosine similarity-nya maka semakin tinggi kemiripannya. Sebaliknya, semakin rendah nilai cosine similarity-nya maka semakin rendah kemiripannya.
   - Rumus:<br>
   ![image](https://github.com/user-attachments/assets/bfb02122-bda9-47b7-a759-51ea1dae5ca4)<br>
-  - Flow:
+  - Flow:<br>
+  ![image](https://github.com/user-attachments/assets/1bdbbdba-4e8c-43f6-b5fc-874556a1afb2)<br>
+    - Dimulai dengan persiapan data untuk pencarian. Pertama, sebuah Series bernama indices dibuat yang memetakan setiap judul buku (lowercase) ke indeks barisnya dalam DataFrame df. Ini memungkinkan pencarian cepat berdasarkan judul.
+    - Selanjutnya, fungsi recommend_books_with_similarity didefinisikan. Fungsi ini menerima title sebagai masukan. Langkah pertama di dalam fungsi adalah mengubah title masukan menjadi lowercase untuk memastikan konsistensi dengan indices. Kemudian, fungsi memeriksa apakah title tersebut ada dalam indices. Jika tidak, ia akan mengembalikan pesan bahwa buku tidak ditemukan.
+    - Jika buku ditemukan, fungsi mengambil indeks numerik buku tersebut dari indices. Menggunakan indeks ini, ia kemudian mengakses baris yang sesuai dalam matriks cosine_sim untuk mendapatkan semua skor cosine similarity antara buku yang dicari dengan semua buku lain dalam dataset. Skor-skor ini kemudian diubah menjadi daftar tuple yang berisi pasangan (indeks buku, skor kemiripan).
+    - Daftar skor kemiripan ini kemudian diurutkan dari yang tertinggi ke terendah. Setelah itu, 10 skor teratas diambil, dengan mengabaikan skor pertama yang selalu merupakan similarity buku itu sendiri dengan dirinya sendiri (yang nilainya 1).
+    - Terakhir, sebuah daftar kosong bernama recommendations dibuat. Fungsi kemudian mengulang setiap dari 10 skor kemiripan teratas yang telah diurutkan. Untuk setiap skor, ia mengambil indeks buku dan skor similarity itu sendiri. Menggunakan indeks buku, fungsi mengambil informasi judul, penulis, dan rating rata-rata buku dari DataFrame df asli, lalu mengubahnya menjadi sebuah dictionary. Skor cosine similarity kemudian ditambahkan sebagai entri baru dalam dictionary informasi buku tersebut. Dictionary yang sudah lengkap ini kemudian ditambahkan ke daftar recommendations. Setelah perulangan selesai, fungsi mengembalikan daftar recommendations ini sebagai sebuah DataFrame Pandas.
   - Hasil Percobaan: <br>
+    ![image](https://github.com/user-attachments/assets/71fd4a3c-79ab-4fac-9be1-346f193c6d3c)<br>
     ![image](https://github.com/user-attachments/assets/eba7c95d-8e0e-458f-86d0-a07019369693)<br>
 - Sistem Rekomendasi dengan Euclidean Distance.
   - Definisi: Salah satu metode pengukuran jarak paling dasar dan umum dalam ruang multidimensi. Euclidean Distance mengukur jarak lurus (garis terpendek) antara dua titik dalam ruang vektor. Dalam konteks content-based filtering, semakin pendek distancenya maka semakin tinggi kemiripannya. Sebaliknya, semakin panjang distancenya maka semakin rendah kemiripannya.
@@ -99,6 +106,9 @@ Variabel-variabel pada Books Dataset adalah sebagai berikut:
     - Daftar skor distance ini kemudian diurutkan dari yang terkecil ke terbesar, karena distance yang lebih kecil menunjukkan kemiripan yang lebih tinggi. Sepuluh skor teratas diambil, dengan mengabaikan skor pertama yang merupakan distance buku itu sendiri dengan dirinya sendiri (yang nilainya nol).
     - Selanjutnya, sebuah daftar kosong bernama recommendations disiapkan. Fungsi kemudian mengulang setiap dari 10 skor distance teratas yang telah diurutkan. Untuk setiap pasangan (indeks buku, skor jarak), informasi detail buku seperti title, author, dan average_rating diambil dari DataFrame df asli dan diubah menjadi sebuah dictionary. Skor Euclidean Distance kemudian ditambahkan sebagai entri baru dalam dictionary informasi buku tersebut. Dictionary yang sudah lengkap ini kemudian ditambahkan ke daftar recommendations. Setelah perulangan selesai, fungsi mengembalikan daftar recommendations ini sebagai sebuah DataFrame Pandas.
   - Hasil Percobaan:<br>
+    ![image](https://github.com/user-attachments/assets/b86a9e04-4349-4693-bab9-46b463387cb9)<br>
     ![image](https://github.com/user-attachments/assets/a5981552-c546-4811-acf5-41b468934728)<br>
 ## Evaluation
-
+- Dari hasil percobaan dengan judul buku yang sama, yaitu menggunakan cosine similarity dan euclidean distance, keduanya memberikan rekomendasi buku yang sama.
+- Dengan metode cosine similarity, nilai tertinggi yaitu 0.69
+- Dengan metode euclidean distance, jarak terdekat yaitu 0.77 
