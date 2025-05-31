@@ -85,6 +85,8 @@ Variabel-variabel pada Books Dataset adalah sebagai berikut:
   - Rumus:<br>
     ![image](https://github.com/user-attachments/assets/2066c3b4-b6ea-4cbf-abfc-3b2889b1c9be)<br>
   - Flow:
+    - Pertama-tama melakukan stopwords (penghentian kata) pada kata-kata yang dianggap tidak memiliki makna seperti and,the, is, in, dan lain-lain. Hal ini dilakukan agar memberikan hasil ekstraksi yang berkualitas. 
+    - Selanjutnya mengubah teks menjadi angka (vektor). Hal ini dilakukan supaya bisa diekstrak dengan metode TF-IDF. 
   - Hasil Ekstraksi:<br>
   ![image](https://github.com/user-attachments/assets/1b4a7a04-a837-43bd-afc7-92a415ccba06)<br>
   Matriks dengan dimensi 6810 (baris) x 10317 (kolom) 
