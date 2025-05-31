@@ -37,6 +37,7 @@ Dengan menggunakan pendekatan ini, sistem rekomendasi tidak hanya menjadi alat b
   
 ## Data Understanding
 
+### Informasi tentang Dataset
 - Kumpulan data ini merupakan kumpulan informasi komprehensif tentang buku, yang dirancang untuk digunakan dalam sistem rekomendasi dan pengembangan chatbot. Kumpulan data ini mencakup detail tentang berbagai macam buku, sehingga cocok untuk berbagai aplikasi di bidang pembelajaran mesin, pemrosesan bahasa alami, dan kecerdasan buatan.
 - Terdapat 6810 baris dan 12 kolom.
 - Kondisi dataset tidak ada data duplikat, tapi ada missing value pada beberapa kolom seperti subtitle, authors, categories, thumbnails, description, published_year, average_rating, num_pages, dan ratings_count. Sehingga diperlukan cleaning terhadap beberapa kolom tersebut.
@@ -56,11 +57,7 @@ Variabel-variabel pada Books Dataset adalah sebagai berikut:
 - num_pages: Jumlah halaman dalam buku.
 - ratings_count: Jumlah total penilaian yang diterima buku.
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data beserta insight atau exploratory data analysis.
-
-## Data Preparation
-
+### Exploratory Data Analysis
 - Mengetahui informasi singkat dataset seperti melihat nama, jumlah data, dan tipe data di tiap kolom. Hal ini mempermudah proses cleaning.<br>
 ![image](https://github.com/user-attachments/assets/7debd94c-b8cf-4ff4-9c6f-7f550ed108dc)<br>
 - Mengetahui deskripsi statistik dataset untuk melihat keseimbangan dan logisnya data.<br>
@@ -72,6 +69,9 @@ Variabel-variabel pada Books Dataset adalah sebagai berikut:
   ![image](https://github.com/user-attachments/assets/cdb7bd46-74b9-4c00-bcc8-b14878fb3eef)<br>
   - Top 10 Penulis dengan Jumlah Halaman Terbanyak.<br>
   ![image](https://github.com/user-attachments/assets/ee884cd8-6a2d-4fa4-9440-35c2797294ab)<br>
+
+## Data Preparation
+
 - Data Cleaning:
   - Feature Selection: Memilih kolom yang penting-penting saja. Seperti kolom title, authors, dan categories. Kemudian, kolom-kolom tersebut digabungkan menjadi sebuah kolom baru dengan nama 'combined'. Alasan digabungkan adalah untuk persiapan sebelum diekstraksi fiturnya.<br>
   ![image](https://github.com/user-attachments/assets/b1cc01ba-db54-477a-9785-222d5ce1194d)<br>
