@@ -76,7 +76,7 @@ Variabel-variabel pada Books Dataset adalah sebagai berikut:
   - Feature Selection: Memilih kolom yang penting-penting saja. Seperti kolom title, authors, dan categories. Kemudian, kolom-kolom tersebut digabungkan menjadi sebuah kolom baru dengan nama 'combined'. Alasan digabungkan adalah untuk persiapan sebelum diekstraksi fiturnya.<br>
   ![image](https://github.com/user-attachments/assets/b1cc01ba-db54-477a-9785-222d5ce1194d)<br>
   ![image](https://github.com/user-attachments/assets/69cc3302-8bc8-401e-819a-2ab90998af43)<br>
-  - Null Handling: Menangani data null dengan string kosong (''). String kosong dipilih karena pada saat ekstraksi fitur, string kosong tidak akan mempengaruhi hasil ekstraksi.
+  - Null Handling: Menangani data null dengan string kosong (''). String kosong dipilih karena pada saat ekstraksi fitur, string kosong tidak akan mempengaruhi hasil ekstraksi.Data null tidak dihapus karena akan mengganggu keseimbangan data. 
 
 ## Modeling
 
