@@ -76,11 +76,8 @@ Variabel-variabel pada Books Dataset adalah sebagai berikut:
   - Feature Selection: Memilih kolom yang penting-penting saja. Seperti kolom title, authors, dan categories. Kemudian, kolom-kolom tersebut digabungkan menjadi sebuah kolom baru dengan nama 'combined'. Alasan digabungkan adalah untuk persiapan sebelum diekstraksi fiturnya.<br>
   ![image](https://github.com/user-attachments/assets/b1cc01ba-db54-477a-9785-222d5ce1194d)<br>
   ![image](https://github.com/user-attachments/assets/69cc3302-8bc8-401e-819a-2ab90998af43)<br>
-  - Null Handling: Menangani data null dengan string kosong (''). String kosong dipilih karena pada saat ekstraksi fitur, string kosong tidak akan mempengaruhi hasil ekstraksi.Data null tidak dihapus karena akan mengganggu keseimbangan data. 
-
-## Modeling
-
-- Ekstraksi Fitur dengan TF-IDF
+  - Null Handling: Menangani data null dengan string kosong (''). String kosong dipilih karena pada saat ekstraksi fitur, string kosong tidak akan mempengaruhi hasil ekstraksi.Data null tidak dihapus karena akan mengganggu keseimbangan data.Modeling
+- Ekstraksi Fitur dengan TF-IDF:
   - Definisi: teknik dalam Natural Language Processing (NLP) yang digunakan untuk mengubah data teks menjadi angka-angka yang bisa diproses oleh algoritma machine learning atau sistem rekomendasi. Dalam konteks content-based filtering, TF-IDF berperan untuk mengekstrak fitur penting dari konten teks yang akan dibandingkan antar item (buku).
   - Rumus:<br>
     ![image](https://github.com/user-attachments/assets/2066c3b4-b6ea-4cbf-abfc-3b2889b1c9be)<br>
@@ -90,6 +87,9 @@ Variabel-variabel pada Books Dataset adalah sebagai berikut:
   - Hasil Ekstraksi:<br>
   ![image](https://github.com/user-attachments/assets/1b4a7a04-a837-43bd-afc7-92a415ccba06)<br>
   Matriks dengan dimensi 6810 (baris) x 10317 (kolom) 
+
+## Modeling
+
 - Sistem Rekomendasi dengan Cosine Similarity.
   - Definisi: Ukuran kemiripan antara dua vektor berdasarkan sudut (cosine) di antara keduanya, bukan jaraknya. Cosine similarity digunakan untuk mengukur seberapa mirip arah dua vektor dalam ruang multidimensi, tanpa memperhatikan panjangnya (magnitudo). Dalam konteks content-based filtering, semakin tinggi nilai cosine similarity-nya maka semakin tinggi kemiripannya. Sebaliknya, semakin rendah nilai cosine similarity-nya maka semakin rendah kemiripannya.
   - Rumus:<br>
