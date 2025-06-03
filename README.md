@@ -118,7 +118,23 @@ Variabel-variabel pada Books Dataset adalah sebagai berikut:
     ![image](https://github.com/user-attachments/assets/b86a9e04-4349-4693-bab9-46b463387cb9)<br>
     ![image](https://github.com/user-attachments/assets/a5981552-c546-4811-acf5-41b468934728)<br>
 ## Evaluation
-- Dari hasil percobaan dengan judul buku yang sama, yaitu menggunakan cosine similarity dan euclidean distance, keduanya memberikan rekomendasi judul buku yang konsisten.
-- Dengan metode cosine similarity, nilai tertinggi yaitu 0.69 untuk buku berjudul 'Two Alone'. Lalu, diikuti 'Three Complete Novels' dengan cs 0.54
-- Dengan metode euclidean distance, jarak terdekat yaitu 0.77 untuk buku berjudul 'Two Alone'. Lalu, diikuti 'Three Complete Novels' dengan distance 0.95
-- Dari ketiga hal tersebut, bisa dikatakan bahwa sistem rekomendasi menggunakan cosine similarity dan euclidean distance sudah cukup baik untuk melakukan tugasnya. Namun, masih bisa dikembangkan lagi untuk bisa menaikkan nilai cosine similarity dan menurunkan nilai euclidean distance.
+- Recall@k
+  - Definisi: Metrik evaluasi yang mengukur seberapa baik sistem rekomendasi dalam menemukan item-item yang benar-benar relevan di antara k rekomendasi teratas. Semakin dekat dengan angka 1, maka semakin baik rekomendasi yang dihasilkan. Semakin dekat dengan 0, maka semakin buruk rekomendasi yang dihasilkan.
+  - Flow:<br>
+    - a
+    - a
+  - Hasil:<br>
+    - Evaluasi Recall@k dg Cosine Similarity:
+      - Recall@10 memiliki nilai recall yaitu 0,76. Artinya sistem rekomendasi baik dalam menghasilkan rekomendasi yang relevan sesuai judul buku.
+      - Recall@5 cukup baik untuk menghasilkan rekomendasi dengan nilai recall 0,45.
+      -Recall@3 tidak cukup relevan menghasilkan rekomendasi buku dengan nilai recall 0.27
+      - Recall@1 menghasilkan nilai recall paling rendah yaitu 0,10.
+    - Evaluasi Recall@k dg Euclidean Distance:
+      - Recall@10 memiliki nilai recall yaitu 0,76. Artinya sistem rekomendasi baik dalam menghasilkan rekomendasi yang relevan sesuai judul buku.
+      - Recall@5 cukup baik untuk menghasilkan rekomendasi dengan nilai recall 0,45.
+      -Recall@3 tidak cukup relevan menghasilkan rekomendasi buku dengan nilai recall 0.27
+      - Recall@1 menghasilkan nilai recall paling rendah yaitu 0,10.
+    - Kesimpulan:
+      - Kedua metode (Cosine Similarity dan Euclidean Distance) menunjukkan kinerja Recall@k yang sama persis pada semua nilai k yang diuji (1, 3, 5, dan 10). Ini menyiratkan bahwa, dalam konteks data dan implementasi Anda saat ini, kedua metrik kesamaan ini menghasilkan rekomendasi yang sama efektifnya dalam menemukan item relevan.
+      - Performa Recall untuk kedua model meningkat secara konsisten seiring dengan peningkatan k. Ini adalah perilaku yang diharapkan, karena semakin banyak rekomendasi yang dipertimbangkan, semakin besar peluang untuk menemukan item relevan.
+      - Pada k=10, kedua model mencapai Recall yang kuat sebesar sekitar 76.3%, yang menunjukkan bahwa mereka cukup handal dalam mencakup sebagian besar item relevan jika pengguna bersedia melihat daftar rekomendasi yang lebih panjang. 
