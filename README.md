@@ -40,7 +40,7 @@ Dengan menggunakan pendekatan ini, sistem rekomendasi tidak hanya menjadi alat b
 ### Informasi tentang Dataset
 - Kumpulan data ini merupakan kumpulan informasi komprehensif tentang buku, yang dirancang untuk digunakan dalam sistem rekomendasi dan pengembangan chatbot. Kumpulan data ini mencakup detail tentang berbagai macam buku, sehingga cocok untuk berbagai aplikasi di bidang pembelajaran mesin, pemrosesan bahasa alami, dan kecerdasan buatan.
 - Terdapat 6810 baris dan 12 kolom.
-- Kondisi dataset tidak ada data duplikat, tapi ada missing value pada beberapa kolom seperti subtitle, authors, categories, thumbnails, description, published_year, average_rating, num_pages, dan ratings_count. Sehingga diperlukan cleaning terhadap beberapa kolom tersebut.
+- Kondisi dataset tidak ada data duplikat, tapi ada missing value pada beberapa kolom seperti subtitle (4429), authors (72), categories (99), thumbnail (329) description (262), published_year (6), avergae_rating (43), num_pages (43), dan ratings_count (43). Sehingga diperlukan cleaning terhadap beberapa kolom tersebut.
 - Link Dataset: [Kaggle](https://www.kaggle.com/datasets/abdallahwagih/books-dataset).
  
 Variabel-variabel pada Books Dataset adalah sebagai berikut:
@@ -123,9 +123,18 @@ Variabel-variabel pada Books Dataset adalah sebagai berikut:
   - Rumus:<br>
   ![image](https://github.com/user-attachments/assets/f40ad60f-c5bf-4eee-aecc-c65d12a1284a)<br>
   - Flow:<br>
-    - a
-    - a
+    - Membuat fungsi untuk menghitung recall@k. Di dalamnya terdapat penanganan apabila terdapat item yang tidak relevan sama sekali akan mengembalikan nilai 0. Jika terdapat item yang relevan, maka item relevant (ground_truth) akan dicocokkan dengan daftar hasil rekomendasi aktual (recommendation_cosine dan recommendation_euclidean) dengan melakukan iterasi sebanyak k (slicing index).<br>
+    ![image](https://github.com/user-attachments/assets/311eeeb4-2b1d-46ff-ae71-fe71c024219f)<br>
+    ![image](https://github.com/user-attachments/assets/5d09efb2-a82a-4092-b687-c1c9e4422245)<br>
+    - Membuat dictionary secara manual berisi data hasil rekomendasi berdasarkan cosine similarity dan euclidean distance yang akan digunakan untuk menghitung nilai recall dengan mencocokkan nilainya dengan item relevant (ground_truth).<br>
+    ![image](https://github.com/user-attachments/assets/3ea9330a-01e8-4614-a2a5-46b19379e97d)<br>
+    - Membuat dictionary secara manual berisi data item relevant (ground_truth) yang muncul untuk suatu item (judul buku) yang akan digunakan untuk menghitung nilai recall dengan mencocokkan nilainya dengan hasil rekomendasi (cosine dan euclidean).
+    - Membuat fungsi evaluasi recall. Di dalamnya terdapat proses perhitungan recall berdasarkan nilai iterasi k (1, 3, 5, 10) yang kemudian akan disimpan nilainya untuk evaluasi.<br>
+    ![image](https://github.com/user-attachments/assets/ae300a23-9654-4426-8098-fa0857cee872)<br>
+    ![image](https://github.com/user-attachments/assets/7d44b9db-417a-458a-b88f-2c73eff90005)<br>
+    - Memanggil nilai evaluasi recall@k pada cosine_similarity dan euclidean_distance.
   - Hasil:<br>
+  ![image](https://github.com/user-attachments/assets/42854e5c-86b9-4afe-851a-f32984ba9da0)<br>
     - Evaluasi Recall@k dg Cosine Similarity:
       - Recall@10 memiliki nilai recall yaitu 0,76. Artinya sistem rekomendasi baik dalam menghasilkan rekomendasi yang relevan sesuai judul buku.
       - Recall@5 cukup baik untuk menghasilkan rekomendasi dengan nilai recall 0,45.
