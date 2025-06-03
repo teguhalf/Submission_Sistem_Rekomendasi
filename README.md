@@ -134,7 +134,7 @@ Variabel-variabel pada Books Dataset adalah sebagai berikut:
     ![image](https://github.com/user-attachments/assets/7d44b9db-417a-458a-b88f-2c73eff90005)<br>
     - Memanggil nilai evaluasi recall@k pada cosine_similarity dan euclidean_distance.
   - Hasil:<br>
-  ![image](https://github.com/user-attachments/assets/42854e5c-86b9-4afe-851a-f32984ba9da0)<br>
+  ![image](https://github.com/user-attachments/assets/b85d5358-896b-43af-9829-5955abf66f0d)<br>
     - Evaluasi Recall@k dg Cosine Similarity:
       - Recall@10 memiliki nilai recall yaitu 0,76. Artinya sistem rekomendasi baik dalam menghasilkan rekomendasi yang relevan sesuai judul buku.
       - Recall@5 cukup baik untuk menghasilkan rekomendasi dengan nilai recall 0,45.
