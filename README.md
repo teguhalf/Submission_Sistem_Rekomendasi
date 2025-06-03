@@ -120,6 +120,8 @@ Variabel-variabel pada Books Dataset adalah sebagai berikut:
 ## Evaluation
 - Recall@k
   - Definisi: Metrik evaluasi yang mengukur seberapa baik sistem rekomendasi dalam menemukan item-item yang benar-benar relevan di antara k rekomendasi teratas. Semakin dekat dengan angka 1, maka semakin baik rekomendasi yang dihasilkan. Semakin dekat dengan 0, maka semakin buruk rekomendasi yang dihasilkan.
+  - Rumus:<br>
+  ![image](https://github.com/user-attachments/assets/f40ad60f-c5bf-4eee-aecc-c65d12a1284a)<br>
   - Flow:<br>
     - a
     - a
